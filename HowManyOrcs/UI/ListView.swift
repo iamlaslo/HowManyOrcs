@@ -11,25 +11,32 @@ struct ListView: View {
     
     internal let stats: [Stat]
     
+    private var columns: [GridItem] {
+        [GridItem(.adaptive(minimum: Const.isPad ? 240 : 120))]
+    }
+    
     var body: some View {
         ZStack {
             ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: [GridItem(), GridItem()], spacing: 30) {
+                LazyVGrid(columns: self.columns, spacing: Const.isPad ? 100 : 30) {
                     ForEach(self.stats) {
                         StatView(name: $0.name, amount: $0.amount, increase: $0.increase)
                     }
                 }
                 .padding()
+                .padding(.top, Const.isPad ? 60 : 20)
             }
             .background(Color("background-main"))
             
             if self.stats.isEmpty {
                 ProgressView()
-                //                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
                     .scaleEffect(2)
-                //                    .shadow(color: .white, radius: 1)
             }
         }
+    }
+    
+    private func checkDevice() {
+        
     }
 }
 

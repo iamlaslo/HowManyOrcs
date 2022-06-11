@@ -13,6 +13,10 @@ struct StatView: View {
     let amount: Int
     let increase: Int
     
+    private var scaleAmount: CGFloat {
+        Const.isPad ? 1.5 : 1
+    }
+    
     var body: some View {
         VStack {
             VStack {
@@ -40,6 +44,7 @@ struct StatView: View {
         .background(Color("cell-main"))
         .cornerRadius(20)
         .shadow(radius: 5)
+        .scaleEffect(self.scaleAmount)
     }
 }
 

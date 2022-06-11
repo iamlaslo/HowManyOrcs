@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+public struct Const {
+    
+    static let isPad = UIDevice.current.userInterfaceIdiom == .pad
+}
+
 @main
 struct HowManyOrcsApp: App {
     var body: some Scene {
