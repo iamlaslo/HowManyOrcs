@@ -7,14 +7,6 @@
 
 import Foundation
 
-struct Stat: Identifiable {
-    
-    let id = UUID()
-    let name: String
-    let amount: Int
-    let increase: Int
-}
-
 struct OrcsStats: Decodable {
     
     let personnel_units: Int

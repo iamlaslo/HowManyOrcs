@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ListView: View {
     
+    // MARK: - Variables
+    
     internal let stats: [Stat]
     
     private var columns: [GridItem] {
         [GridItem(.adaptive(minimum: Const.isPad ? 240 : 120))]
     }
+    
+    // MARK: - Body
     
     var body: some View {
         ZStack {
@@ -33,10 +37,6 @@ struct ListView: View {
                     .scaleEffect(2)
             }
         }
-    }
-    
-    private func checkDevice() {
-        
     }
 }
 

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct StatView: View {
     
+    // MARK: - Variables
+    
     let name: String
     let amount: Int
     let increase: Int
@@ -16,6 +18,8 @@ struct StatView: View {
     private var scaleAmount: CGFloat {
         Const.isPad ? 1.5 : 1
     }
+    
+    // MARK: - Body
     
     var body: some View {
         VStack {
